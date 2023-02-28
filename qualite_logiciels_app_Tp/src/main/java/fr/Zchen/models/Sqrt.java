@@ -2,8 +2,8 @@ package fr.Zchen.models;
 
 import java.util.ArrayList; // import the ArrayList class
 public class Sqrt {
-    private int min;
-    private int max;
+    private Integer min;
+    private Integer max;
     ArrayList<Double> list = new ArrayList<>(); // Create an ArrayList object
 
     /**
@@ -35,19 +35,26 @@ public class Sqrt {
      * @param Min
      * @param Max
      */
-    public void init(int Min, int Max) {
-        if (Min<Max){
-            min = Min;
-            max = Max;
-        }
+    public void init(Integer Min, Integer Max) {
 
+        //Vérification de la non-nullité des paramètres
+        if(Min==null) throw new IllegalArgumentException("Entier Min nul");
+        else if(Max==null) throw new IllegalArgumentException("Entier Max nul");
+
+        //Vérification de la valeur du paramètre
+        if(Min<0) throw new IllegalArgumentException("Entier Min négatif");
+        else if(Max<0) throw new IllegalArgumentException("Entier Max négatif");
+        else if(Min > Max) throw new IllegalArgumentException("Entier Min supérieur à Max");
+
+        min = Min;
+        max = Max;
     }
 
     /**
      * add Sqrt value into the list
      */
     public void addSqrtValue(){
-        for (int i = min; i < max; i++) {
+        for (Integer i = min; i < max; i++) {
             list.add(Math.sqrt(i));
         }
     }

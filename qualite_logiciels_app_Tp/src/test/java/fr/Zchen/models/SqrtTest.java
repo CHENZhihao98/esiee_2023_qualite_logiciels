@@ -29,7 +29,6 @@ public class SqrtTest {
     @AfterAll
     static void testGetValue(){
         for (double value : sqrt.getList()) {
-            System.out.println(value);
             assertTrue(Double.isNaN(value),"it's not a number");
         }
     }
