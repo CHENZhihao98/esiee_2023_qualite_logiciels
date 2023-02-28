@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.ldumay</groupId>
-    <artifactId>QualiteLogicielsApp2</artifactId>
+    <artifactId>QualiteLogicielsAppTp</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

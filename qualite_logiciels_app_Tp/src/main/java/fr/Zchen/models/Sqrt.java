@@ -1,4 +1,4 @@
-package fr.ldumay.models;
+package fr.Zchen.models;
 
 import java.util.ArrayList; // import the ArrayList class
 public class Sqrt {

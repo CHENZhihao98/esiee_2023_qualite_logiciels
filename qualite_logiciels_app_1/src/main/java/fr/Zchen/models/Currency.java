@@ -1,4 +1,4 @@
-package fr.ldumay.models;
+package fr.Zchen.models;
 
 /**
  * Classe Enum : Currency
