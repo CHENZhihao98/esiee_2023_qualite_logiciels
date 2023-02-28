@@ -55,10 +55,18 @@ public class Sqrt {
      */
     public void addSqrtValue(){
         for (Integer i = min; i < max; i++) {
-            list.add(Math.sqrt(i));
+            list.add(racineCarree(i));
         }
     }
 
+    /**
+     * calc the sqrt
+     * @param val
+     * @return
+     */
+    public double racineCarree(Integer val){
+        return Math.sqrt(val);
+    }
     /**
      * clear array
      */
