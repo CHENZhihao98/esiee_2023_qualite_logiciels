@@ -4,14 +4,22 @@ import java.awt.*;
 
 public class myWindow {
     public static void main(String[] args) {
-
+        // get panel
         JPanel windows = new myWindow().panel();
+
         // Crée le cadre et y auth le panneau
         JFrame cadre = new JFrame("Ma première calculatrice");
+
+        //release windows recourse
+        cadre.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
+        //init panel content
         cadre.setContentPane(windows);
 
         // Positionne les dimensions et rend la fenêtre visible
         cadre.setSize(1000,400);
+        cadre.setLocationRelativeTo(null);
+
         cadre.setVisible(true);
     }
     public JPanel panel(){
