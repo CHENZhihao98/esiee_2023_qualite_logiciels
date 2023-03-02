@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SqrtTest {
     private static Sqrt sqrt;
+    private static Sqrt sqrt2;
+
 
     /**
      * init list max and min value, then check if min < max
@@ -57,6 +59,22 @@ public class SqrtTest {
                 () -> sqrt.racineCarree(4),
                 "Erreur de temps d'exécution"
         );
+    }
+
+    /**
+     * Test de temps d'exécution de la méthode racineCarree().
+     */
+    @Test
+    @DisplayName("Clear List")
+    void testClearList() {
+        sqrt2 = new Sqrt();
+        sqrt2.init(1,10);
+        sqrt2.addSqrtValue();
+        assertFalse(sqrt2.getList().isEmpty(),"insert false");
+
+        sqrt2.clearList();
+        assertTrue(sqrt2.getList().isEmpty(),"method clear not working");
+
     }
     @AfterAll
     static void testGetValue(){
