@@ -19,8 +19,11 @@ public class SqrtTest {
      */
     @BeforeAll
     public static void init() {
+        Integer max = 10;
+        Integer min = 1;
+
         sqrt = new Sqrt();
-        sqrt.init(1,10);
+        sqrt.init(min,max);
 
         assertTrue(sqrt.getMin()<sqrt.getMax(),"Min is not < to Max");
     }
@@ -28,6 +31,11 @@ public class SqrtTest {
     @Test
     void testAddVal(){
         sqrt.addSqrtValue();
+        Integer nbElement = sqrt.getNbElement();
+
+        System.out.println(nbElement);
+
+        assertEquals((int) sqrt.getNbElement(), sqrt.getMax() - sqrt.getMin(), "Le nombre d'elément incorrect");
         assertFalse(sqrt.getList().isEmpty(),"insert false");
     }
     /**

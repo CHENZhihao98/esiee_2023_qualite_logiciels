@@ -5,13 +5,17 @@ public class Sqrt {
     private Integer min;
     private Integer max;
     ArrayList<Double> list = new ArrayList<>(); // Create an ArrayList object
-
+    private Integer nbElement;
     /**
      * get array list
      * @return
      */
     public ArrayList<Double> getList() {
         return list;
+    }
+
+    public Integer getNbElement() {
+        return nbElement;
     }
 
     /**
@@ -48,14 +52,18 @@ public class Sqrt {
 
         min = Min;
         max = Max;
+        nbElement = 0;
     }
 
     /**
      * add Sqrt value into the list
      */
     public void addSqrtValue(){
+        if (nbElement!=0){nbElement = 0;}
+
         for (Integer i = min; i < max; i++) {
             list.add(racineCarree(i));
+            nbElement += 1;
         }
     }
 
