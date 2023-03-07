@@ -1,11 +1,16 @@
 package org.example.vue;
 import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.*;
 
 public class myWindow {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedLookAndFeelException {
+        //Apply look and feel
+        UIManager.setLookAndFeel(new NimbusLookAndFeel());
+
+
         // get panel
-        JPanel windows = new myWindow().panel();
+        JPanel contentPane = new myWindow().panel();
 
         // Crée le cadre et y auth le panneau
         JFrame cadre = new JFrame("Ma première calculatrice");
@@ -14,7 +19,7 @@ public class myWindow {
         cadre.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         //init panel content
-        cadre.setContentPane(windows);
+        cadre.setContentPane(contentPane);
 
         // Positionne les dimensions et rend la fenêtre visible
         cadre.setSize(1000,400);
@@ -24,14 +29,13 @@ public class myWindow {
     }
     public JPanel panel(){
         // Crée un panneau
-        JPanel windows = new JPanel();
+        JPanel contentPane = new JPanel();
 
 //        // Affecte un gestionnaire de disposition à ce panneau
-//        FlowLayout disposition = new FlowLayout();
-//        windows.setLayout(disposition);
+        FlowLayout disposition = new FlowLayout();
         // Affecte un gestionnaire de presentation à ce panneau
-        GridLayout disposition = new GridLayout(4,2);
-        windows.setLayout(disposition);
+//        GridLayout disposition = new GridLayout(4,2);
+        contentPane.setLayout(disposition);
 
         // Crée les contrôles en mémoire
         JLabel label1 = new JLabel("Nombre 1 :");
@@ -40,17 +44,17 @@ public class myWindow {
         JTextField entree2 = new JTextField(10);
         JLabel label3 = new JLabel("Somme :");
         JTextField resultat = new JTextField(10);
-        JButton lancer = new JButton("Ajouter");
+        JButton lancer = new JButton("Calculer");
 
         // Ajoute les contrôles au panneau
-        windows.add(label1);
-        windows.add(entree1);
-        windows.add(label2);
-        windows.add(entree2);
-        windows.add(label3);
-        windows.add(resultat);
-        windows.add(lancer);
+        contentPane.add(label1);
+        contentPane.add(entree1);
+        contentPane.add(label2);
+        contentPane.add(entree2);
+        contentPane.add(label3);
+        contentPane.add(resultat);
+        contentPane.add(lancer);
 
-        return windows;
+        return contentPane;
     }
 }
